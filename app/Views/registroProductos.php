@@ -9,7 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo (base_url('public/styles/styles.css')) ?>">
+    <link rel="stylesheet" href="<?php
+
+use App\Controllers\Productos;
+
+echo (base_url('public/styles/styles.css')) ?>">
     <title>ANIMALANDIA</title>
 </head>
 
@@ -41,25 +45,25 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-6">
-                    <form method="" action="<?= ?>" class="mt-4">
+                    <form method="POST" action="<?= site_url('/productos/registro/nuevo')?>" class="mt-4">
                         <div class="mb-3">
                             <label for="" class="form-label">Producto:</label>
-                            <input type="text" class="form-control" id="producto" placeholder="">
+                            <input type="text" class="form-control" id="producto" placeholder="" name="product">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Fotografía:</label>
-                            <input type="text" class="form-control" id="photo" placeholder="">
+                            <input type="text" class="form-control" id="photo" placeholder="" name="photo">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Precio Unidad:</label>
-                            <input type="text" class="form-control" id="price" placeholder="">
+                            <input type="text" class="form-control" id="price" placeholder="" name="price">
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" name="" id="description" cols="30" rows="5" placeholder="Descripción"></textarea>
+                            <textarea class="form-control" name="description" id="description" cols="30" rows="5" placeholder="Descripción"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Tipo de animal:</label>
-                            <select name="" class="form-control" id="animaltype">
+                            <select name="animaltype" class="form-control" id="animaltype">
                                 <option value="0" selected disabled>Seleccione un animal</option>
                                 <option value="1">Perro</option>
                                 <option value="2">Gato</option>
@@ -68,12 +72,12 @@
                                 <option value="5">Reptil</option>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-primary w-100">enviar</button>
+                        <div class="mb-3 d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">enviar</button>
                         </div>                        
                     </form>
                 </div>
-                <div class="col-6 d-flex align-items-center">
+                <div class="col-6 align-items-center mb-5">
                     <img class="img-fluid" src="<?= base_url('public/img/imagen4.jpg') ?>" alt="">
                 </div>
             </div>            

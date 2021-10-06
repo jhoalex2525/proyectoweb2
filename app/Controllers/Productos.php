@@ -8,4 +8,26 @@ class Productos extends BaseController
     {
         return view('registroProductos');
     }
+
+    public function registrar()
+    {
+        //1. Recibo los datos enviados desde el formulario
+        //En parentesis son los name de cada input del forms
+        $product = $this->request->getPost("product");
+        $photo = $this->request->getPost("photo");
+        $price = $this->request->getPost("price");
+        $description = $this->request->getPost("description");
+        $animaltype = $this->request->getPost("animaltype");
+
+        //2. Crear un arreglo asociativo con los datos del paso 1
+        $datos = array(
+            "product" => $product,
+            "photo" => $photo,
+            "price" => $price,
+            "description" => $description,
+            "animaltype" => $animaltype
+        );
+
+        print_r($datos);
+    }
 }

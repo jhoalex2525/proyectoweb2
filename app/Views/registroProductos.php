@@ -43,8 +43,8 @@ echo (base_url('public/styles/styles.css')) ?>">
     </header>
     <section>
         <div class="container mt-5">
-            <div class="row">
-                <div class="col-6">
+            <div class="row mt-5 d-flex justify-content-center">
+                <div class="col-12 col-md-5">
                     <form method="POST" action="<?= site_url('/productos/registro/nuevo')?>" class="mt-4">
                         <div class="mb-3">
                             <label for="" class="form-label">Producto:</label>
@@ -77,8 +77,8 @@ echo (base_url('public/styles/styles.css')) ?>">
                         </div>                        
                     </form>
                 </div>
-                <div class="col-6 align-items-center mb-5">
-                    <img class="img-fluid" src="<?= base_url('public/img/imagen4.jpg') ?>" alt="">
+                <div class="col-12 col-md-5 align-self-center">
+                    <img class="img-fluid w-100" src="<?= base_url('public/img/imagen4.jpg') ?>" alt="">
                 </div>
             </div>            
         </div>

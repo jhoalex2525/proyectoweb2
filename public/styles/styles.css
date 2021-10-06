@@ -1,0 +1,11 @@
+.principalbackground{
+    background-color: #07A1E1 !important;
+}
+
+.principalfont{
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.zoomin .col-1:hover img {
+    -webkit-transform:scale(1.3);transform:scale(1.3) !important;
+}

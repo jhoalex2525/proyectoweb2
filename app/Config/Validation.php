@@ -37,6 +37,14 @@ class Validation
         'single' => 'CodeIgniter\Validation\Views\single',
     ];
 
+    public $producto = [ // Acá se ponen los name que se tengan en el formulario
+        'product' => 'required', //si se requiere mas de una validación se usa | ej: required|string
+        'photo' => 'required',
+        'price' => 'required',
+        'description' => 'required',
+        'animaltype' => 'required'
+    ];
+
     //--------------------------------------------------------------------
     // Rules
     //--------------------------------------------------------------------

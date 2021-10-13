@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php
 
-use App\Controllers\Productos;
+                                    use App\Controllers\Productos;
 
-echo (base_url('public/styles/styles.css')) ?>">
+                                    echo (base_url('public/styles/styles.css')) ?>">
     <title>ANIMALANDIA</title>
 </head>
 
@@ -41,11 +41,11 @@ echo (base_url('public/styles/styles.css')) ?>">
             </div>
         </nav>
     </header>
-    <section>
+    <main>
         <div class="container mt-5">
             <div class="row mt-5 d-flex justify-content-center">
                 <div class="col-12 col-md-5">
-                    <form method="POST" action="<?= site_url('/productos/registro/nuevo')?>" class="mt-4">
+                    <form method="POST" action="<?= site_url('/productos/registro/nuevo') ?>" class="mt-4">
                         <div class="mb-3">
                             <label for="" class="form-label">Producto:</label>
                             <input type="text" class="form-control" id="producto" placeholder="" name="product">
@@ -74,13 +74,29 @@ echo (base_url('public/styles/styles.css')) ?>">
                         </div>
                         <div class="mb-3 d-grid gap-2">
                             <button type="submit" class="btn btn-primary">enviar</button>
-                        </div>                        
+                        </div>
                     </form>
                 </div>
                 <div class="col-12 col-md-5 align-self-center">
                     <img class="img-fluid w-100" src="<?= base_url('public/img/imagen4.jpg') ?>" alt="">
                 </div>
-            </div>            
+            </div>
+        </div>
+    </main>
+    <section>
+        <!-- Modal -->
+        <div class="modal fade" id="modalresponse" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content fondoPrincipal">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Animalandia</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>                    
+                </div>
+            </div>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>

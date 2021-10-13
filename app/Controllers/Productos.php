@@ -19,15 +19,24 @@ class Productos extends BaseController
         $description = $this->request->getPost("description");
         $animaltype = $this->request->getPost("animaltype");
 
-        //2. Crear un arreglo asociativo con los datos del paso 1
-        $datos = array(
-            "product" => $product,
-            "photo" => $photo,
-            "price" => $price,
-            "description" => $description,
-            "animaltype" => $animaltype
-        );
+        //2. Validar que se llenó el formulario
 
-        print_r($datos);
+        if($this->validate('producto')){
+            echo("Todo funcionó");
+        }
+        else{
+            echo("Datos pendientes");
+        }
+
+        // //3. Crear un arreglo asociativo con los datos del paso 1
+        // $datos = array(
+        //     "product" => $product,
+        //     "photo" => $photo,
+        //     "price" => $price,
+        //     "description" => $description,
+        //     "animaltype" => $animaltype
+        // );
+
+        // print_r($datos);
     }
 }

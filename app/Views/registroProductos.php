@@ -89,7 +89,7 @@
             <div class="modal fade" id="modalresponse" tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header principalbackground text-withe">
+                        <div class="modal-header principalbackground text-white">
                             <h5 class="modal-title">Animalandia</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>

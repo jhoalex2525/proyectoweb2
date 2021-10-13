@@ -25,7 +25,8 @@ class Productos extends BaseController
             echo("Todo funcionó");
         }
         else{
-            echo("Datos pendientes");
+            $mensaje = "Datos pendientes por diligenciar";
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);            
         }
 
         // //3. Crear un arreglo asociativo con los datos del paso 1

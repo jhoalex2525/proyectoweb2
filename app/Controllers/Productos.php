@@ -39,8 +39,8 @@ class Productos extends BaseController
             );
 
             // Se intenta grabar los datos en la base de datos
-            try{
-                $modelo = new ProductModel();
+            try{                
+                $modelo = new ProductModel(); 
                 $modelo -> insert($datos);                
                 return redirect()->to(site_url('/productos/registro'))->with('mensaje','Éxito agregando el producto');
 
@@ -53,5 +53,28 @@ class Productos extends BaseController
             $mensaje = "Datos pendientes por diligenciar";
             return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);            
         }        
+    }
+
+    public function buscar(){         
+         try{
+            $modelo = new ProductModel();
+            $resultado = $modelo->findAll();            
+            $productos = array('productos'=>$resultado);
+            return view('listaProductos',$productos);
+         }
+         catch(\Exception $error){
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
+         }         
+    }
+
+    public function eliminar($id){
+        try{
+            $modelo = new ProductModel();
+            $modelo-> where('id',$id)->delete();
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',"Éxito eliminando el producto");
+        }   
+        catch(\Exception $error){
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
+         }         
     }
 }

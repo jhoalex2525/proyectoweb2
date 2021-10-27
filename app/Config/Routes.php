@@ -34,6 +34,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/productos/registro', 'Productos::index');
 $routes->post('/productos/registro/nuevo', 'Productos::registrar');
+$routes->get('/productos/listado', 'Productos::buscar');
+$routes->delete('/productos/eliminar/(:num)', 'Productos::eliminar/$1'); //el $1 es un parametro numerico que va a recibir
 
 /*
  * --------------------------------------------------------------------

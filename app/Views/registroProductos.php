@@ -10,9 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php
-
                                     use App\Controllers\Productos;
-
                                     echo (base_url('public/styles/styles.css')) ?>">
     <title>ANIMALANDIA</title>
 </head>
@@ -77,8 +75,9 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-12 col-md-5 align-self-center">
+                <div class="col-12 col-md-5 align-self-center text-center">
                     <img class="img-fluid w-100" src="<?= base_url('public/img/imagen4.jpg') ?>" alt="">
+                    <a class="btn btn-primary mt-2" href="<?= site_url('/productos/listado')?>">Ver inventario</a>
                 </div>
             </div>
         </div>

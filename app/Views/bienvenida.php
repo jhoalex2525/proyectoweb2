@@ -33,7 +33,7 @@
 							<a class="nav-link" href="<?= site_url('/productos/registro')?>">Registro Productos</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="<?= site_url('/productos/registro')?>">Registro Mascotas</a>
+							<a class="nav-link" href="<?= site_url('/mascotas/registro')?>">Registro Mascotas</a>
 						</li>
 					</ul>
 				</div>

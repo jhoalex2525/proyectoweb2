@@ -40,6 +40,8 @@ $routes->post('/productos/edit/(:num)', 'Productos::editar/$1'); //el $1 es un p
 $routes->get('/mascotas/registro', 'Mascotas::index');
 $routes->post('/mascotas/registro/nuevo', 'Mascotas::registrar');
 $routes->get('/mascotas/listado', 'Mascotas::buscar');
+$routes->delete('/mascotas/eliminar/(:num)', 'Mascotas::eliminar/$1'); //el $1 es un parametro numerico que va a recibir
+$routes->post('/mascotas/edit/(:num)', 'Mascotas::editar/$1'); //el $1 es un parametro numerico que va a recibir. Productos::editar/$1 es del controlador productos la funcion editar
 
 /*
  * --------------------------------------------------------------------

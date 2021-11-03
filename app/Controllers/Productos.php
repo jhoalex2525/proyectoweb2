@@ -59,7 +59,7 @@ class Productos extends BaseController
          try{
             $modelo = new ProductModel();
             $resultado = $modelo->findAll();            
-            $productos = array('productos'=>$resultado);
+            $productos = array('productos'=>$resultado); //En naranja es la variable que se usa en la vista en foreach
             return view('listaProductos',$productos);
          }
          catch(\Exception $error){

@@ -50,6 +50,14 @@ class Validation
         'price' => 'required'
     ];
 
+    public $mascota = [ // Acá se ponen los name que se tengan en el formulario
+        'animalname' => 'required', //si se requiere mas de una validación se usa | ej: required|string
+        'animalphoto' => 'required',
+        'animalage' => 'required',
+        'animaldescription' => 'required',
+        'animaltype' => 'required'
+    ];
+
 
     //--------------------------------------------------------------------
     // Rules

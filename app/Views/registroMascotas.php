@@ -39,6 +39,70 @@
                 </div>
             </div>
         </nav>
-    </header>    
+    </header>
+    <main>
+        <div class="container mt-5">
+            <div class="row mt-5 d-flex justify-content-center">
+                <div class="col-12 col-md-5">
+                    <form method="POST" action="<?= site_url('/mascotas/registro/nuevo') ?>" class="mt-4">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="animalname" placeholder="" name="animalname">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Fotografía:</label>
+                            <input type="text" class="form-control" id="animalphoto" placeholder="" name="animalphoto">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Edad (meses):</label>
+                            <input type="number" class="form-control" id="animalage" placeholder="" name="animalage">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="animaldescription" id="animaldescription" cols="30" rows="5" placeholder="Descripción"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Tipo de animal:</label>
+                            <select name="animaltype" class="form-control" id="animaltype">
+                                <option value="0" selected disabled>Seleccione un animal</option>
+                                <option value="1">Perro</option>
+                                <option value="2">Gato</option>
+                                <option value="3">Ave</option>
+                                <option value="4">Caballo</option>
+                                <option value="5">Reptil</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-md-5 align-self-center text-center">
+                    <img class="img-fluid w-100" src="<?= base_url('public/img/imagen4.jpg') ?>" alt="">
+                    <a class="btn btn-primary mt-2" href="<?= site_url('/mascotas/listado')?>">Ver mascotas</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section>
+        <?php if (session('mensaje')):?>
+            <!-- Modal -->
+            <div class="modal fade" id="modalresponse" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header principalbackground text-white">
+                            <h5 class="modal-title">Animalandia</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5><?= session('mensaje')?></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif ?>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/fb8e0c1491.js" crossorigin="anonymous"></script>
+    <script type="module" src="<?= base_url('public/js/lanzarmodal.js') ?>"></script>
 </body>
 </html>

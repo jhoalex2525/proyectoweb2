@@ -74,7 +74,7 @@
                             </select>
                         </div>
                         <div class="mb-3 d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">enviar</button>
+                            <button type="submit" class="btn btn-primary">Registrar</button>
                         </div>
                     </form>
                 </div>

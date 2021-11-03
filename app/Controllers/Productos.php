@@ -77,4 +77,32 @@ class Productos extends BaseController
             return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
          }         
     }
+
+    public function editar($id){
+        // Recibo datos
+        $product = $this->request->getPost("product");
+        $price = $this->request->getPost("price");
+
+        //2. Validar que se llenó el formulario
+        if ($this->validate('productoeditado')) {
+            // 3. Crear un arreglo asociativo con los datos del paso 1
+            // En naranja van las claves que estan en la base de datos, columnas
+            $datos = array(
+                "product" => $product,
+                "price" => $price                
+            );
+
+            // Se intenta grabar los datos en la base de datos
+            try {
+                $modelo = new ProductModel();
+                $modelo->update($id,$datos);
+                return redirect()->to(site_url('/productos/listado'))->with('mensaje', 'Éxito editando el producto');
+            } catch (\Exception $error) {
+                return redirect()->to(site_url('/productos/listado'))->with('mensaje', $error->getMessage());
+            }
+        } else {
+            $mensaje = "Datos pendientes por diligenciar";
+            return redirect()->to(site_url('/productos/listado'))->with('mensaje', $mensaje);
+        }
+    }
 }

@@ -52,12 +52,12 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?= $producto["product"] ?></h5>
                                 <p class="card-text"><?= $producto["price"] ?></p>
-                                <a data-bs-toggle="modal" data-bs-target="#confirmacion<?= $producto["id"]?>" href="#" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a>
-                                <a data-bs-toggle="modal" data-bs-target="#edit<?= $producto["id"]?>" href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <a data-bs-toggle="modal" data-bs-target="#confirmacion<?= $producto["id"] ?>" href="#" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a>
+                                <a data-bs-toggle="modal" data-bs-target="#edit<?= $producto["id"] ?>" href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                             </div>
                         </div>
                         <section>
-                            <div class="modal fade" id="confirmacion<?= $producto["id"]?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="confirmacion<?= $producto["id"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header principalbackground text-white">
@@ -66,18 +66,18 @@
                                         </div>
                                         <div class="modal-body">
                                             <p>¿Estás seguro de eliminar este producto?</p>
-                                            <p><?= $producto["id"]?></p>
+                                            <p><?= $producto["id"] ?></p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                            <a href="<?=site_url('/productos/eliminar/'.$producto["id"])?>" class="btn btn-danger">Eliminar</a>
+                                            <a href="<?= site_url('/productos/eliminar/' . $producto["id"]) ?>" class="btn btn-danger">Eliminar</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         <section>
-                            <div class="modal fade" id="edit<?= $producto["id"]?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="edit<?= $producto["id"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header principalbackground text-white">
@@ -85,13 +85,25 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>¿Estás seguro de eliminar este producto?</p>
-                                            <p><?= $producto["id"]?></p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                            <a href="<?=site_url('/productos/eliminar/'.$producto["id"])?>" class="btn btn-danger">Eliminar</a>
-                                        </div>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <img src="<?= $producto["photo"] ?>" alt="foto" class="img-fluid w-100">
+                                                </div>
+                                                <div class="col-9">
+                                                    <form action="<?= site_url('/productos/edit/'.$producto["id"])?>" method="POST">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Precio</label>
+                                                            <input type="number" class="form-control" name="price" value="<?= $producto["price"]?>">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Nombre</label>
+                                                            <input type="text" class="form-control" name="product" value="<?= $producto["product"]?>">
+                                                        </div>
+                                                        <button try="submit" class="btn btn-primary">Editar</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>                                        
                                     </div>
                                 </div>
                             </div>
@@ -101,8 +113,27 @@
             </div>
         </div>
     </main>
+    <section>
+        <?php if (session('mensaje')):?>
+            <!-- Modal -->
+            <div class="modal fade" id="modalresponse" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header principalbackground text-white">
+                            <h5 class="modal-title">Animalandia</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5><?= session('mensaje')?></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif ?>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/fb8e0c1491.js" crossorigin="anonymous"></script>
+    <script type="module" src="<?= base_url('public/js/lanzarmodal.js') ?>"></script>
 </body>
 
 </html>

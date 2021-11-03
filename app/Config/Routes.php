@@ -36,6 +36,7 @@ $routes->get('/productos/registro', 'Productos::index');
 $routes->post('/productos/registro/nuevo', 'Productos::registrar');
 $routes->get('/productos/listado', 'Productos::buscar');
 $routes->delete('/productos/eliminar/(:num)', 'Productos::eliminar/$1'); //el $1 es un parametro numerico que va a recibir
+$routes->post('/productos/edit/(:num)', 'Productos::editar/$1'); //el $1 es un parametro numerico que va a recibir. Productos::editar/$1 es del controlador productos la funcion editar
 
 /*
  * --------------------------------------------------------------------

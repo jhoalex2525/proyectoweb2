@@ -44,6 +44,12 @@ class Validation
         'description' => 'required',
         'animaltype' => 'required'
     ];
+    
+    public $productoeditado = [ // Acá se ponen los name que se tengan en el formulario
+        'product' => 'required', //si se requiere mas de una validación se usa | ej: required|string
+        'price' => 'required'
+    ];
+
 
     //--------------------------------------------------------------------
     // Rules

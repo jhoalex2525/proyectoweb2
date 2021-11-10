@@ -9,3 +9,12 @@
 .zoomin .col-1:hover img {
     -webkit-transform:scale(1.3);transform:scale(1.3) !important;
 }
+
+.fixed-bg{
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/proyectoweb2-a0632.appspot.com/o/bg1.jpg?alt=media&token=23306afa-b534-4e53-a41c-e68115387d43");
+    min-height: 350px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

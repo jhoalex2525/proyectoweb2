@@ -67,12 +67,14 @@
 					</div>
 				</div>
 			</div>
+			<div class="fixed-bg"></div>
 			<div class="row mt-5 d-flex justify-content-center">
 				<div class="col-12 col-md-7">					
 					<h2 class="text-center principalfont">Hogar de animales ANIMALANDIA</h2>
 					<p class="text-center mx-5 principalfont">Casa hogar Animalandia, atiende desde 1996 animales y fauna silvestre en estado de abandono, ofreciendo atención integral, además somos fabricantes de comida y accesorios para todo tipo de mascota</p>
 				</div>
 			</div>
+			<div class="fixed-bg"></div>
 			<div class="row mt-5 d-flex justify-content-center zoomin">						
 					<div class="col-1">
 						<img class="img-fluid w-100" src="<?= base_url('public/img/dog-icon.png') ?>" alt="">

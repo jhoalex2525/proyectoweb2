@@ -69,9 +69,9 @@ class Mascotas extends BaseController
         try {
             $modelo = new PetModel();
             $modelo->where('id', $id)->delete();
-            return redirect()->to(site_url('/mascotas/registro'))->with('mensaje', "Éxito borrando mascota");
+            return redirect()->to(site_url('/mascotas/listado'))->with('mensaje', "Éxito borrando mascota");
         } catch (\Exception $error) {
-            return redirect()->to(site_url('/mascotas/registro'))->with('mensaje', $error->getMessage());
+            return redirect()->to(site_url('/mascotas/listado'))->with('mensaje', $error->getMessage());
         }
     }
 

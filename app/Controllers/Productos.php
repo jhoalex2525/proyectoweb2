@@ -71,10 +71,10 @@ class Productos extends BaseController
         try{
             $modelo = new ProductModel();
             $modelo-> where('id',$id)->delete();
-            return redirect()->to(site_url('/productos/registro'))->with('mensaje',"Éxito eliminando el producto");
+            return redirect()->to(site_url('/productos/listado'))->with('mensaje',"Éxito eliminando el producto");
         }   
         catch(\Exception $error){
-            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
+            return redirect()->to(site_url('/productos/listado'))->with('mensaje',$error->getMessage());
          }         
     }
 
